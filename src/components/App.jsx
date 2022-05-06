@@ -1,15 +1,15 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import Note from "./Note"; 
-
+import Note from "./Note";
+import noteData from "../notes"
 
 function App() {
-    return (
+    return ( 
         <div>
-            <Header />
-            <Note />
-            <Footer />
+        <Header /> 
+        {noteData.map(entry => (<Note key = {entry.key} title = {entry.title} content = {entry.content} />) )} 
+        <Footer />
         </div>
     );
 }
